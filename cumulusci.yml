@@ -1,0 +1,25 @@
+minimum_cumulusci_version: '4.3.0'
+project:
+    name: salto-demo
+    package:
+        name: salto-demo
+        api_version: '62.0'
+    git:
+        default_branch: 'main'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/salto-demo/tests
+            options:
+                outputdir: robot/salto-demo/results
+
+    robot_testdoc:
+        options:
+            path: robot/salto-demo/tests
+            output: robot/salto-demo/doc/salto-demo_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
